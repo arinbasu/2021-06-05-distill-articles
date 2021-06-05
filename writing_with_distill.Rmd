@@ -1,0 +1,53 @@
+---
+title: "How to set up an article with Distill"
+description: |
+  Metapost, how to write using Distill
+author:
+  - name: Arindam Basu 
+    orcid_id: 0000-0003-2326-2292
+    url: https://github.com/arinbasu
+    affiliation: UC
+    affiliation_url: https://www.canterbury.ac.nz/
+date: "`r Sys.Date()`"
+bibliography: test.bib
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+Distill is a publication format for scientific and technical writing, native to the web. 
+
+Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill>.
+
+```{r codebox2_img}
+library(tidyverse)
+x <- c(1,2,3,4,5)
+y <- c(6, 7,8,9,10)
+x_y <- tibble(x,y)
+x_y %>%
+  ggplot(aes(x = x, y = y)) +
+  geom_point() +
+  xlab("x") +
+  ylab("y")
+
+```
+
+```{r chunk_table l-body-outset}
+
+library(rmarkdown)
+paged_table(head(mtcars))
+
+```
+## Equations
+
+$$
+   y = \beta_0 + \beta_1 * x
+$$  
+
+## How to write citations
+So, I want to insert citations here [@xie2015]
+
+
+
